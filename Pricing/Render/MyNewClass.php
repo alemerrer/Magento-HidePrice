@@ -6,35 +6,23 @@
 
 namespace Alex\HidePrice\Pricing\Render;
 
-use Alex\HidePrice\Model\HidePriceFactory;
-use Alex\HidePrice\Model\ResourceModel\HidePrice;
-
+use Magento\Framework\App\Config\ScopeConfigInterface;
 
 /**
  * Default price box renderer
  */
 class MyNewClass
 {
-
-    public function __construct( HidePrice\CollectionFactory $hidePriceCollectionFactory) {
-
-        $this->hidePriceCollectionFactory = $hidePriceCollectionFactory;
-
+    public function __construct(ScopeConfigInterface $scopeConfigInterface) {
+        $this->scopeConfigInterface =$scopeConfigInterface;
     }
 
     public function getParameters(): string
     {
-        // $parametersCollection = $this->hidePriceCollectionFactory
-        //     ->create()
-        //     ->filterName('param2');
-        $parametersCollection = $this->hidePriceCollectionFactory
-        ->create();
+        $config_val =  $this->scopeConfigInterface->getValue('Alex/general/alex_text', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $return = $config_val ? $config_val : '';
 
-        $parameters = '';
-        foreach ($parametersCollection as $parameter) {
-            $parameters .= $parameter->getName() . ' / '. $parameter->getContent();
-        }
-        return $parameters;
+        return $return;
     }
 }
 
