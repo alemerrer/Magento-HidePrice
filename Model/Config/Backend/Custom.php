@@ -52,7 +52,6 @@ class Custom extends \Magento\Framework\App\Config\Value
 
     public function afterSave()
     {
-        //$value = $this->getValue() . '_SOMETHING_NEW';
         $value = $this->getValue();
 
         try {
