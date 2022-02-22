@@ -1,6 +1,6 @@
 <?php
 namespace Alex\HidePrice\Model\Config;
- 
+
 class Status implements \Magento\Framework\Option\ArrayInterface
 {
     public function toOptionArray()

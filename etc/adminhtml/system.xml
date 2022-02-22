@@ -20,12 +20,12 @@
                     <backend_model>Alex\HidePrice\Model\Config\Backend\Custom</backend_model>
                 </field>
                 <field id="alex_groups" translate="label comment" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="1">
-                    <label>Groupes concernés</label>
+                    <label>Groupes pouvant voir les prix</label>
                     <source_model>Alex\HidePrice\Model\Config\Groups</source_model>
                     <backend_model>Alex\HidePrice\Model\Config\Backend\Custom</backend_model>
                 </field>
                 <field id="alex_text" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="1">
-                    <label>Texte de remplacement</label>
+                    <label>Texte de remplacement du prix</label>
                     <backend_model>Alex\HidePrice\Model\Config\Backend\Custom</backend_model>
                 </field>
             </group>
